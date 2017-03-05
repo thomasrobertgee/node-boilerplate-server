@@ -15,3 +15,8 @@ const ModelClass = mongoose.model('user', userSchema) // loads the schema into m
 
 // Export the model
 module.exports = ModelClass
+
+
+// mkdir -p /data/db
+//
+// sudo chown -R $USER /data/db
