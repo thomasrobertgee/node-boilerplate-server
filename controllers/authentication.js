@@ -1,5 +1,14 @@
 // this is where we are going to put logic to authenticate a request
+const jwt = require('jwt-simple')
 const User = require('../models/user')
+const config = require('../config')
+
+function tokenForUser(user) {
+  const timestamp = new Date().getTime()
+  // sub = subject
+  // iat = issued at time
+  return jwt.encode({ sub: user.id, iat: timestamp }, config.secret) // first argument is the information we want to encode, the second argument is the secret we are going to use to encode it
+}
 
 exports.signup = function(req, res, next) {
   console.log(req.body)
@@ -31,16 +40,13 @@ exports.signup = function(req, res, next) {
       if (err) { return next(err) }
 
       // respond to request indicating the user was created
-      res.json({ success: true})
+      res.json({ token: tokenForUser(user) })
       // note that an id for the user is automaticaly created when the user is saved
     })
   })
 }
 
-// if all is successful, Postman should spit back something like this:
-// {
-//   "success": true
-// }
+// if all is successful, Postman should spit back whatever is referenced in res.json({ foo })
 
 // if you send the request a second time, Postman should spit back this:
 // {
