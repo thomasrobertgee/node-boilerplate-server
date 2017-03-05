@@ -12,7 +12,7 @@ module.exports = function(app) {
   // next is mostly for error handling
 
   app.get('/', requireAuth, function(req, res) {
-    res.send({ hi: 'there' })
+    res.send({ message: 'Super secret code is ABCD1234' })
   })
 
   // if the user posts anything to /signin then run this function

@@ -6,6 +6,7 @@ const morgan = require('morgan')
 const app = express()
 const router = require('./router')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 // DB Setup
 mongoose.connect('mongodb://localhost:auth/auth')
@@ -15,6 +16,7 @@ mongoose.connect('mongodb://localhost:auth/auth')
 // App Setup
 // morgan and bodyParser are middlewares, any incoming requests will be passed through these two middlewares by default
 app.use(morgan('combined')) // morgan is a logging framework that logs incoming requests (great for debugging)
+app.use(cors())
 app.use(bodyParser.json({ type: '*/*' })) // used to parse incoming requests, in this case into JSON
 router(app)
 
