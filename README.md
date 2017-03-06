@@ -5,7 +5,7 @@ A great boilerplate node server for email and password authentication
 
 ##Getting Started##
 
-` git clone https://github.com/thomasrobertgee/node-biolerplate-server.git`
+` git clone https://github.com/thomasrobertgee/node-boilerplate-server.git`
 
 ## Client side authentication
 
