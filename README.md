@@ -36,9 +36,9 @@ but replace ‘foo’ with a long key mixed with number and letters, can be anyt
 
 8. Go into index.js in the main directory and replace the script on line 12 with the following: 
 ```javascript
-mongoose.connect('mongodb://localhost:foo1/foo2')` 
+mongoose.connect('mongodb://localhost:foo1/foo2')
 ```
-foo1 will be the main app folder name e.g. app and foo2 will be whatever you want the database to be named e.g. appDB, then save the file
+foo1 will be the main app folder name e.g. app and foo2 will be whatever you want the database to be named e.g. appDatabase, then save the file
 
 9. To check this worked, open RoboMongo then create a new connection (call it whatever you like) and check to see if the db has been created. If yes, a collection called users should have been automatically created 
 
