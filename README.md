@@ -1,8 +1,6 @@
 # node-boilerplate-server
 A great boilerplate node server for email and password authentication 
 
-# React & Redux client-side authentication
-
 ##Getting Started##
 
 ` git clone https://github.com/thomasrobertgee/node-boilerplate-server.git`
